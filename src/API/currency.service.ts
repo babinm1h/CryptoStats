@@ -1,5 +1,9 @@
 import { $currencyInstance } from ".";
-import { IFetchCurrencies, IFetchSingleCurrency } from "../types/ResponseTypes/response.types";
+import {
+  IFetchCurrencies,
+  IFetchSingleCurrency,
+  IGetCurrencyHistory,
+} from "../types/ResponseTypes/response.types";
 
 export class CurrencyService {
   static async fetchAll(limit?: number | 20): Promise<IFetchCurrencies> {
@@ -12,7 +16,10 @@ export class CurrencyService {
     return data;
   }
 
-  static async fetchCurrencyHistory() {}
+  static async fetchCurrencyHistory(id: string, period: string): Promise<IGetCurrencyHistory> {
+    const { data } = await $currencyInstance.get(`coin/${id}/history?timePeriod=${period}`);
+    return data;
+  }
 
   static async fetchExchanges() {}
 }

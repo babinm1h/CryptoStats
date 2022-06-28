@@ -13,3 +13,15 @@ export const fetchSingleCurrency = createAsyncThunk(
     }
   }
 );
+
+export const fetchCurrencyHistory = createAsyncThunk(
+  SingleCurrencyThunkTypes.fetch_history,
+  async (payload: { id: string; period: string }, thunk) => {
+    try {
+      const data = await CurrencyService.fetchCurrencyHistory(payload.id, payload.period);
+      return data;
+    } catch (err) {
+      return thunk.rejectWithValue(err);
+    }
+  }
+);
