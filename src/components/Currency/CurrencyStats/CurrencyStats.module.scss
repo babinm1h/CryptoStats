@@ -1,0 +1,21 @@
+.stats {
+    .statItem {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid #ccc;
+        padding: 20px 0;
+        .statInfo {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .statIcon {
+                font-size: 15px;
+                margin-bottom: 3px;
+            }
+        }
+        .statValue {
+            font-weight: bold;
+        }
+    }
+}

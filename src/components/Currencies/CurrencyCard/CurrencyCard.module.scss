@@ -1,0 +1,49 @@
+.card {
+    padding: 30px 20px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: all 0.2s linear;
+    color: white;
+    cursor: pointer;
+    &:hover {
+        transform: scale(102%);
+    }
+    .header {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        .title {
+            flex-grow: 1;
+            line-height: 1.5;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .icon {
+            width: 50px;
+            height: 50px;
+        }
+    }
+    .info {
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        .infoItem {
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            .infoTitle {
+                flex-grow: 1;
+            }
+            .changeNeg {
+                color: red;
+            }
+            .changePos {
+                color: lime;
+            }
+        }
+    }
+}

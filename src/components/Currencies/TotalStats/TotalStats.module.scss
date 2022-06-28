@@ -1,0 +1,22 @@
+.stats {
+    padding-top: 30px;
+    .title {
+        font-weight: bold;
+        font-size: 32px;
+    }
+    .statItems {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        .statItem {
+            .statName {
+                font-size: 16px;
+            }
+            .statValue {
+                font-size: 20px;
+                margin-top: 6px;
+            }
+        }
+    }
+}

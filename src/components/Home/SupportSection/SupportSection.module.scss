@@ -1,0 +1,34 @@
+@import "../../../styles/variables";
+.section {
+    .textBlock {
+        padding: 140px 0;
+        width: 780px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .title {
+        font-size: 50px;
+        font-weight: bold;
+        line-height: 1.3;
+    }
+    .text {
+        line-height: 1.5;
+        color: $homeText;
+        padding: 0 100px;
+        margin: 32px 0;
+    }
+    .support {
+        display: flex;
+        align-items: center;
+        .infoBlock {
+            padding-right: 80px;
+            flex: 50%;
+            .text {
+                padding: 0;
+            }
+        }
+        img {
+            flex: 50%;
+        }
+    }
+}
