@@ -1,0 +1,48 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px 0;
+    .converter {
+        padding: 40px 20px;
+        background-color: #fff;
+        color: black;
+        border-radius: 8px;
+        max-width: 600px;
+        width: 100%;
+        .fromBlock {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            flex-direction: column;
+            .input {
+                border: 1px solid #ccc;
+                padding: 10px;
+                border-radius: 4px;
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        .select {
+            width: 100%;
+        }
+        .label {
+            width: 100%;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .resultBlock {
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            .resultValue {
+                font-weight: bold;
+            }
+        }
+    }
+}

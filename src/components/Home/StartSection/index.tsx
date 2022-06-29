@@ -7,14 +7,12 @@ import card2 from "../../../assets/card2.png";
 import card3 from "../../../assets/card3.png";
 import StartButton from "../../UI/StartButton";
 
-
 const cardsVars = {
-  hidden: { x: -500, opacity: 0 },
+  hidden: { x: 0, opacity: 0 },
   visible: { x: 0, opacity: 1, transition: { duration: 0.4 } },
 };
 
 const StartSection = () => {
-
   return (
     <section className={s.section}>
       <div className={s.textBlock}>
@@ -30,7 +28,7 @@ const StartSection = () => {
         className={s.cards}
         whileInView="visible"
         initial="hidden"
-        viewport={{ amount: 0.1, once: true }}
+        viewport={{ amount: 0.2, once: true }}
         variants={cardsVars}
       >
         <div className={s.card}>

@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { DollarIcon, HashIcon, ChartIcon, ExchangeIcon, HoursIcon } from "../../../assets/icons";
+import { DollarIcon, HashIcon, ChartIcon, ExchangeIcon, HoursIcon, BtcIcon } from "../../../assets/icons";
 import { ISingleCurrency } from "../../../types/currency.types";
 import { roundNumber } from "../../../utils/roundNumbers";
 import s from "./CurrencyStats.module.scss";
@@ -47,6 +47,13 @@ const CurrencyStats: FC<ICurrencyStatsProps> = ({ currency }) => {
           <span className={s.statName}>24h Volume</span>
         </div>
         <span className={s.statValue}>{roundNumber(currency?.["24hVolume"])} $</span>
+      </li>
+      <li className={s.statItem}>
+        <div className={s.statInfo}>
+          <BtcIcon className={s.statIcon} />
+          <span className={s.statName}>BTC Price</span>
+        </div>
+        <span className={s.statValue}>{roundNumber(currency?.btcPrice)}</span>
       </li>
     </ul>
   );

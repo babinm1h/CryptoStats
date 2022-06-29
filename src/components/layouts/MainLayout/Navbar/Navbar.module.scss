@@ -17,10 +17,13 @@
             padding-top: 60px;
             color: white;
             .item {
-                padding: 10px 20px;
+                display: block;
+                padding: 15px 20px;
                 transition: all 0.3s ease;
+                color: white;
                 &:hover {
-                    background-color: $lightGray;
+                    background-color: white;
+                    color: black;
                 }
             }
         }

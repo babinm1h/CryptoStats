@@ -1,13 +1,25 @@
-import React, { FC } from "react"
-import s from "./StartButton.module.scss"
-import cn from "classnames"
+import React, { FC } from "react";
+import s from "./StartButton.module.scss";
+import cn from "classnames";
+import { useNavigate } from "react-router-dom";
+import { AllRoutes } from "../../AppRoutes";
 
 interface IStartButtonProps {
-  className?: string
+  className?: string;
 }
 
 const StartButton: FC<IStartButtonProps> = ({ className }) => {
-  return <button className={s.btn + ` ${className}`}>Get started!</button>
-}
+  const nav = useNavigate();
 
-export default StartButton
+  const handleClick = () => {
+    nav(AllRoutes.TOP_CURRENCIES);
+  };
+
+  return (
+    <button className={s.btn + ` ${className}`} onClick={handleClick}>
+      Get started!
+    </button>
+  );
+};
+
+export default StartButton;

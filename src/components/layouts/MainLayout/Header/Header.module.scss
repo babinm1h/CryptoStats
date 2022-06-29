@@ -38,7 +38,17 @@
         .nav {
             display: flex;
             align-items: center;
-            gap: 30px;
+            gap: 40px;
+            font-weight: 500;
+            a {
+                color: white;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+            @media (max-width: 768px) {
+                gap: 25px;
+            }
         }
     }
 }

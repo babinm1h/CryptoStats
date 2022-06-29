@@ -2,6 +2,7 @@ import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
 import { ICurrency } from "../../../types/currency.types";
 import { roundNumber } from "../../../utils/roundNumbers";
+import { AllRoutes } from "../../AppRoutes";
 import s from "./CurrencyCard.module.scss";
 
 interface ICurrencyCardProps {
@@ -10,7 +11,7 @@ interface ICurrencyCardProps {
 
 const CurrencyCard: FC<ICurrencyCardProps> = ({ currency }) => {
   return (
-    <NavLink to={`/curr/${currency.uuid}`}>
+    <NavLink to={AllRoutes.CURRENCY + `/${currency.uuid}`}>
       <div
         className={s.card}
         style={{

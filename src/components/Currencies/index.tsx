@@ -17,13 +17,15 @@ const CurrenciesPage = () => {
 
   return (
     <MainLayout>
-      <TotalStats />
-      <h2 className={s.topTitle}>Top 10 Crypto Currencies</h2>
-      <ul className={s.list}>
-        {topCurrencies.map((c) => (
-          <CurrencyCard currency={c} key={c.uuid} />
-        ))}
-      </ul>
+      <div className="pageWrapper">
+        <TotalStats />
+        <h2 className={s.topTitle}>Top 10 Crypto Currencies</h2>
+        <ul className={s.list}>
+          {topCurrencies.map((c) => (
+            <CurrencyCard currency={c} key={c.uuid} />
+          ))}
+        </ul>
+      </div>
     </MainLayout>
   );
 };

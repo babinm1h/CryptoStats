@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 const blockVars = {
   visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
-  hidden: { opacity: 0, x: 500 },
+  hidden: { opacity: 0, x: -500 },
 };
 
 const SupportSection = () => {
@@ -27,7 +27,7 @@ const SupportSection = () => {
           className={s.infoBlock}
           whileInView="visible"
           initial="hidden"
-          viewport={{ amount: 0.1, once: true }}
+          viewport={{ amount: 0.2, once: true }}
           variants={blockVars}
         >
           <h2 className={s.title}>24/7 access to full service customer support</h2>

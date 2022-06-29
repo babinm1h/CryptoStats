@@ -1,5 +1,8 @@
 .wrapper {
-    padding: 50px 0;
+    padding: 50px;
+    @media (max-width: 1024px) {
+        padding: 30px 20px;
+    }
     .header {
         display: flex;
         align-items: center;
@@ -21,4 +24,9 @@
             font-weight: bold;
         }
     }
+}
+.select {
+    color: black;
+    width: 200px;
+    margin-top: 20px;
 }
