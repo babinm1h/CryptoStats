@@ -22,7 +22,7 @@ const CurrencyCard: FC<ICurrencyCardProps> = ({ currency }) => {
         <div className={s.header}>
           <div className={s.title}>
             <span className="">{currency.rank}.</span>
-            <span className="">{currency.name}</span>
+            <span className={s.name}>{currency.name}</span>
           </div>
           <img src={currency.iconUrl} alt="icon" className={s.icon} />
         </div>

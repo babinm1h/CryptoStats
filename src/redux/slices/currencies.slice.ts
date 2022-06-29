@@ -9,17 +9,23 @@ const initialState: ICurrenciesState = {
   stats: null,
   isTopFetching: true,
   topCurrencies: [],
+  currentPage: 1,
+  totalCount: 0,
 };
 
 const currenciesSlice = createSlice({
   initialState,
   name: "currencies",
-  reducers: {},
+  reducers: {
+    setCurrentPage(state, action: PayloadAction<number>) {
+      state.currentPage = action.payload;
+    },
+  },
   extraReducers: {
     [fetchCurrencies.fulfilled.type]: (state, action: PayloadAction<IFetchCurrencies>) => {
       state.isFetching = false;
+      state.totalCount = action.payload.data.stats.total;
       state.currencies = action.payload.data.coins;
-
     },
     [fetchCurrencies.pending.type]: (state, action) => {
       state.isFetching = false;
@@ -43,3 +49,4 @@ const currenciesSlice = createSlice({
 });
 
 export default currenciesSlice.reducer;
+export const { setCurrentPage } = currenciesSlice.actions;

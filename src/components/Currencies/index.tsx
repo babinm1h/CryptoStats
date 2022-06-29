@@ -3,9 +3,10 @@ import { useAppDispatch } from "../../hooks/useAppDispatch";
 import { useAppSelector } from "../../hooks/useAppSelector";
 import { fetchTopCurrencies } from "../../redux/thunks/currencies.thunks";
 import MainLayout from "../layouts/MainLayout";
-import CurrencyCard from "./CurrencyCard";
+import CurrencyCard from "../CurrenciesList/CurrencyCard";
 import s from "./Currencies.module.scss";
 import TotalStats from "./TotalStats";
+import CurrenciesList from "../CurrenciesList";
 
 const CurrenciesPage = () => {
   const dispatch = useAppDispatch();
@@ -17,14 +18,10 @@ const CurrenciesPage = () => {
 
   return (
     <MainLayout>
-      <div className="pageWrapper">
+      <div className={s.wrapper}>
         <TotalStats />
         <h2 className={s.topTitle}>Top 10 Crypto Currencies</h2>
-        <ul className={s.list}>
-          {topCurrencies.map((c) => (
-            <CurrencyCard currency={c} key={c.uuid} />
-          ))}
-        </ul>
+        <CurrenciesList currencies={topCurrencies}/>
       </div>
     </MainLayout>
   );

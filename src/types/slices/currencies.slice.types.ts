@@ -7,6 +7,8 @@ export interface ICurrenciesState {
   stats: ITotalStats | null;
   topCurrencies: ICurrency[];
   isTopFetching: boolean;
+  currentPage: number;
+  totalCount: number;
 }
 
 export enum CurrenciesThunkTypes {

@@ -79,7 +79,7 @@ const PriceChart: FC<IPriceChartProps> = ({ history }) => {
   const series = [
     {
       name: "Price $",
-      data: history.map((h) => Math.round(+h.price)),
+      data: history.map((h) => Math.round(+h.price || 1)),
     },
   ];
 

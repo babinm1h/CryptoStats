@@ -22,7 +22,7 @@ const CurrencyPage = () => {
     { value: "1y", label: "1 year" },
   ];
 
-  const [period, setPeriod] = useState<SingleValue<{ value: string; label: string }>>(options[0]);
+  const [period, setPeriod] = useState<SingleValue<{ value: string; label: string }>>(options[2]);
 
   const handlePeriod = (value: SingleValue<{ value: string; label: string }>) => {
     setPeriod(value);
@@ -30,11 +30,15 @@ const CurrencyPage = () => {
 
   useEffect(() => {
     dispatch(fetchSingleCurrency(id));
-  }, [id]);
+  }, [id, dispatch]);
 
   useEffect(() => {
     dispatch(fetchCurrencyHistory({ id, period: period!.value }));
   }, [id, period]);
+
+  if (error) {
+    alert(error);
+  }
 
   if (!currency || isFetching) {
     return <div></div>;

@@ -1,6 +1,5 @@
 import React, { FC } from "react";
 import s from "./StartButton.module.scss";
-import cn from "classnames";
 import { useNavigate } from "react-router-dom";
 import { AllRoutes } from "../../AppRoutes";
 

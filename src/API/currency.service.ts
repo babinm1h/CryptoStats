@@ -6,8 +6,8 @@ import {
 } from "../types/ResponseTypes/response.types";
 
 export class CurrencyService {
-  static async fetchAll(limit?: number | 20): Promise<IFetchCurrencies> {
-    const { data } = await $currencyInstance.get<IFetchCurrencies>(`/coins?limit=${limit}`);
+  static async fetchAll(limit: number, offset?: number): Promise<IFetchCurrencies> {
+    const { data } = await $currencyInstance.get<IFetchCurrencies>(`/coins`, { params: { limit, offset } });
     return data;
   }
 
@@ -21,5 +21,8 @@ export class CurrencyService {
     return data;
   }
 
-  static async fetchExchanges() {}
+  static async fetchCurrencies(id: string, period: string): Promise<IGetCurrencyHistory> {
+    const { data } = await $currencyInstance.get(`coin/${id}/history?timePeriod=${period}`);
+    return data;
+  }
 }
