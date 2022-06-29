@@ -23,11 +23,9 @@ const Header = () => {
       <header className={s.header}>
         <div className={s.container}>
           <div className={s.logoBlock}>
-            <span className={s.btnContainer}>
-              <button className={s.menuBtn} onClick={toggleOpen}>
-                {open ? <CloseIcon className={s.menuIcon} /> : <MenuIcon className={s.menuIcon} />}
-              </button>
-            </span>
+            <button className={s.menuBtn} onClick={toggleOpen}>
+              {open ? <CloseIcon className={s.menuIcon} /> : <MenuIcon className={s.menuIcon} />}
+            </button>
             <NavLink to={AllRoutes.HOME}>
               <img src={logo} alt="logo" />
             </NavLink>

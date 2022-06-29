@@ -7,17 +7,27 @@
     height: 100%;
     .textBlock {
         margin: 0 auto;
-        padding: 170px 0;
         max-width: 780px;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 170px 20px;
         .title {
             font-weight: bold;
             font-size: 85px;
             line-height: 1.5;
             text-align: center;
+            @media (max-width: 1024px) {
+                text-align: center;
+                font-size: 40px;
+            }
+            @media (max-width: 870px) {
+                font-size: 28px;
+            }
+            @media (max-width: 640px) {
+                font-size: 22px;
+            }
         }
         .text {
             color: $homeText;
@@ -29,6 +39,9 @@
         .btn {
             margin-top: 32px;
         }
+        @media (max-width: 1024px) {
+            padding: 100px 20px;
+        }
     }
     .cards {
         display: flex;
@@ -36,6 +49,10 @@
         gap: 20px;
         padding: 0 130px 80px 130px;
         align-items: stretch;
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            padding: 0 20px 30px 20px;
+        }
         .card {
             display: flex;
             flex-direction: column;
@@ -46,6 +63,9 @@
             border-radius: 25px;
             transition: all 0.3s ease;
             width: 33%;
+            @media (max-width: 1024px) {
+                width: 100%;
+            }
             &:hover {
                 transform: scale(105%);
             }
@@ -54,10 +74,15 @@
                 font-size: 16px;
                 text-align: center;
                 line-height: 1.5;
+                flex-grow: 1;
             }
             .cardTitle {
                 font-size: 32px;
                 font-weight: bold;
+                text-align: center;
+                @media (max-width: 640px) {
+                    font-size: 16px;
+                }
             }
             .cardBtn {
                 color: #b982ff;

@@ -3,12 +3,18 @@
     .title {
         font-weight: bold;
         font-size: 32px;
+        @media (max-width: 768px) {
+            font-size: 24px;
+        }
     }
     .statItems {
         margin-top: 20px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 30px;
+        @media (max-width: 640px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
         .statItem {
             .statName {
                 font-size: 16px;

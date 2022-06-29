@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import Chart from "react-apexcharts";
 import { ICurrencyHistory } from "../../../types/currency.types";
-import { roundNumber } from "../../../utils/roundNumbers";
+import { roundChartPrice } from "../../../utils/roundNumbers";
 import s from "./PriceChart.module.scss";
 
 interface IPriceChartProps {
@@ -79,7 +79,7 @@ const PriceChart: FC<IPriceChartProps> = ({ history }) => {
   const series = [
     {
       name: "Price $",
-      data: history.map((h) => Math.round(+h.price || 1)),
+      data: history.map((h) => roundChartPrice(+h.price)),
     },
   ];
 

@@ -11,6 +11,10 @@
         border-radius: 8px;
         max-width: 600px;
         width: 100%;
+        @media (max-width: 1024px) {
+            max-width: 100%;
+            border-radius: 0;
+        }
         .fromBlock {
             margin-bottom: 20px;
             display: flex;
@@ -40,6 +44,9 @@
             align-items: center;
             gap: 10px;
             font-size: 18px;
+            @media (max-width: 400px) {
+                font-size: 14px;
+            }
             .resultValue {
                 font-weight: bold;
             }

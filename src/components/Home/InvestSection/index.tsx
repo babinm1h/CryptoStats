@@ -5,8 +5,8 @@ import investBg from "../../../assets/investbg.png";
 import { motion } from "framer-motion";
 
 const blockVars = {
-  visible: { opacity: 1, x: 0, transition: { duration: 0.4 } },
-  hidden: { opacity: 0, x: -300 },
+  visible: { opacity: 1, transition: { duration: 0.4 } },
+  hidden: { opacity: 0 },
 };
 
 const InvestSection = () => {
@@ -16,7 +16,7 @@ const InvestSection = () => {
         className={s.infoBlock}
         whileInView="visible"
         initial="hidden"
-        viewport={{ amount: 0.1, once: true }}
+        viewport={{ amount: 0.2, once: true }}
         variants={blockVars}
       >
         <div className={s.infoContainer}>

@@ -6,12 +6,20 @@
     height: 100%;
     padding: 50px 80px;
     border-top: 1px solid #ccc;
+    @media (max-width: 1024px) {
+        padding: 30px 20px;
+    }
     .container {
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;
         gap: 20px;
         justify-content: space-between;
+        @media (max-width: 1024px) {
+            flex-direction: column;
+            gap: 50px;
+            line-height: 1.5;
+        }
         .column1 {
             flex: 1;
             line-height: 1.5;
@@ -28,6 +36,10 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            @media (max-width: 1024px) {
+                justify-content: start;
+                align-items: start;
+            }
             .columnTitle {
                 font-weight: 600;
             }

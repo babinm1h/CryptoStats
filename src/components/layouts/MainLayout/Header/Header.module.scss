@@ -18,21 +18,16 @@
         justify-content: space-between;
         padding: 0 20px;
         align-items: center;
-        img {
-            margin-left: 50px;
-        }
-        .btnContainer {
-            position: relative;
+        .logoBlock {
+            display: flex;
+            align-items: center;
             .menuBtn {
+                margin-right: 30px;
                 background-color: transparent;
                 .menuIcon {
                     font-size: 24px;
                     color: white;
                 }
-                position: absolute;
-                top: -2px;
-                left: 0;
-                z-index: 61;
             }
         }
         .nav {
@@ -40,6 +35,9 @@
             align-items: center;
             gap: 40px;
             font-weight: 500;
+            @media (max-width: 768px) {
+                display: none;
+            }
             a {
                 color: white;
                 &:hover {

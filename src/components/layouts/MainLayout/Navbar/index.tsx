@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React, { FC, useEffect } from "react";
 import s from "./Navbar.module.scss";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
@@ -21,6 +21,14 @@ const overlayVars = {
 };
 
 const Navbar: FC<INavbarProps> = ({ onClose }) => {
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, []);
+
   return (
     <motion.div
       className={s.overlay}
