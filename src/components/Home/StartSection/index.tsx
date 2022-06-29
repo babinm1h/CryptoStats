@@ -7,29 +7,35 @@ import card2 from "../../../assets/card2.png";
 import card3 from "../../../assets/card3.png";
 import StartButton from "../../UI/StartButton";
 
-const cardsVars = {
+const variants = {
   hidden: { x: 0, opacity: 0 },
-  visible: { x: 0, opacity: 1, transition: { duration: 0.4 } },
+  visible: { x: 0, opacity: 1, transition: { duration: 0.7 } },
 };
 
 const StartSection = () => {
   return (
     <section className={s.section}>
-      <div className={s.textBlock}>
+      <motion.div
+        className={s.textBlock}
+        whileInView="visible"
+        initial="hidden"
+        viewport={{ amount: 0, once: true }}
+        variants={variants}
+      >
         <h1 className={s.title}>We make crypto clear and simple</h1>
         <p className={s.text}>
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. At distinctio consequatur, dolor
           doloremque ipsum voluptas molestias illo molestiae? Voluptatem, facilis!
         </p>
         <StartButton className={s.btn} />
-      </div>
+      </motion.div>
 
       <motion.div
         className={s.cards}
         whileInView="visible"
         initial="hidden"
         viewport={{ amount: 0.2, once: true }}
-        variants={cardsVars}
+        variants={variants}
       >
         <div className={s.card}>
           <img src={card1} alt="card" />

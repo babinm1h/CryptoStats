@@ -4,6 +4,7 @@ import { useAppSelector } from "../../hooks/useAppSelector";
 import { fetchCurrencies } from "../../redux/thunks/currencies.thunks";
 import CurrenciesList from "../CurrenciesList";
 import MainLayout from "../layouts/MainLayout";
+import Loader from "../Loader";
 import Pagination from "../Pagination";
 import s from "./AllCurrencies.module.scss";
 
@@ -16,7 +17,11 @@ const AllCurenciesPage = () => {
   }, [dispatch, currentPage]);
 
   if (isFetching || !currencies) {
-    return <div>load</div>;
+    return (
+      <div className="loader-center">
+        <Loader />
+      </div>
+    );
   }
 
   return (

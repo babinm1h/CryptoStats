@@ -30,6 +30,7 @@ export interface ISingleCurrency {
   sparkline: string[];
   rank: number;
   links: ICurrencyLink[];
+  allTimeHigh: { price: string };
 }
 
 export interface ICurrencyLink {
@@ -38,8 +39,7 @@ export interface ICurrencyLink {
   name: string;
 }
 
-
 export interface ICurrencyHistory {
-    price: string;
-    timestamp: number;
-  }
+  price: string;
+  timestamp: number;
+}

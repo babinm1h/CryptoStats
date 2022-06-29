@@ -28,7 +28,7 @@ const currenciesSlice = createSlice({
       state.currencies = action.payload.data.coins;
     },
     [fetchCurrencies.pending.type]: (state, action) => {
-      state.isFetching = false;
+      state.isFetching = true;
     },
     [fetchCurrencies.rejected.type]: (state, action) => {
       state.isFetching = false;

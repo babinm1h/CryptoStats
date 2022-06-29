@@ -24,6 +24,20 @@
             font-weight: bold;
         }
     }
+    .description {
+        margin-top: 20px;
+        .descriptionTitle {
+            font-size: 20px;
+            font-weight: bold;
+        }
+        .descriptionText {
+            line-height: 1.5;
+            margin-top: 20px;
+            a {
+                color: skyblue;
+            }
+        }
+    }
 }
 .select {
     color: black;

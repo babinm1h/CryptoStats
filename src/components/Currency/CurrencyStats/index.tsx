@@ -9,22 +9,38 @@ interface ICurrencyStatsProps {
 }
 
 const CurrencyStats: FC<ICurrencyStatsProps> = ({ currency }) => {
+  const statItems = [
+    { icon: <DollarIcon className={s.statIcon} />, name: `Price USD`, value: roundNumber(currency?.price) },
+    { icon: <HashIcon className={s.statIcon} />, name: `Rank`, value: currency?.rank },
+    {
+      icon: <ExchangeIcon className={s.statIcon} />,
+      name: `Market Cap`,
+      value: `${roundNumber(currency?.marketCap)} $`,
+    },
+    {
+      icon: <HoursIcon className={s.statIcon} />,
+      name: `24h Volume`,
+      value: roundNumber(currency?.["24hVolume"]),
+    },
+    { icon: <BtcIcon className={s.statIcon} />, name: `BTC Price`, value: roundNumber(currency?.btcPrice) },
+    {
+      icon: <DollarIcon className={s.statIcon} />,
+      name: `Highest Price`,
+      value: roundNumber(currency?.allTimeHigh.price),
+    },
+  ];
+
   return (
     <ul className={s.stats}>
-      <li className={s.statItem}>
-        <div className={s.statInfo}>
-          <DollarIcon className={s.statIcon} />
-          <span className={s.statName}>Price USD</span>
-        </div>
-        <span className={s.statValue}>{roundNumber(currency?.price)} $</span>
-      </li>
-      <li className={s.statItem}>
-        <div className={s.statInfo}>
-          <HashIcon className={s.statIcon} />
-          <span className={s.statName}>Rank</span>
-        </div>
-        <span className={s.statValue}>{currency?.rank}</span>
-      </li>
+      {statItems.map((i) => (
+        <li className={s.statItem} key={i.name}>
+          <div className={s.statInfo}>
+            {i.icon}
+            <span className={s.statName}>{i.name}</span>
+          </div>
+          <span className={s.statValue}>{i.value} $</span>
+        </li>
+      ))}
       <li className={s.statItem}>
         <div className={s.statInfo}>
           <ChartIcon className={s.statIcon} />
@@ -33,27 +49,6 @@ const CurrencyStats: FC<ICurrencyStatsProps> = ({ currency }) => {
         <span className={s.statValue} style={{ color: currency.change.includes("-") ? "red" : "lime" }}>
           {roundNumber(currency?.change)} %
         </span>
-      </li>
-      <li className={s.statItem}>
-        <div className={s.statInfo}>
-          <ExchangeIcon className={s.statIcon} />
-          <span className={s.statName}>Market Cap</span>
-        </div>
-        <span className={s.statValue}>{roundNumber(currency?.marketCap)} $</span>
-      </li>
-      <li className={s.statItem}>
-        <div className={s.statInfo}>
-          <HoursIcon className={s.statIcon} />
-          <span className={s.statName}>24h Volume</span>
-        </div>
-        <span className={s.statValue}>{roundNumber(currency?.["24hVolume"])} $</span>
-      </li>
-      <li className={s.statItem}>
-        <div className={s.statInfo}>
-          <BtcIcon className={s.statIcon} />
-          <span className={s.statName}>BTC Price</span>
-        </div>
-        <span className={s.statValue}>{roundNumber(currency?.btcPrice)}</span>
       </li>
     </ul>
   );

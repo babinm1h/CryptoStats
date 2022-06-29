@@ -8,6 +8,8 @@ import s from "./Currency.module.scss";
 import CurrencyStats from "./CurrencyStats";
 import PriceChart from "./PriceChart";
 import Select, { SingleValue } from "react-select";
+import HtmlReactParser from "html-react-parser";
+import Loader from "../Loader";
 
 const CurrencyPage = () => {
   const { currency, error, isFetching, history } = useAppSelector((state) => state.singleCurrency);
@@ -34,14 +36,18 @@ const CurrencyPage = () => {
 
   useEffect(() => {
     dispatch(fetchCurrencyHistory({ id, period: period!.value }));
-  }, [id, period]);
+  }, [id, period, dispatch]);
 
   if (error) {
     alert(error);
   }
 
   if (!currency || isFetching) {
-    return <div></div>;
+    return (
+      <div className="loader-center">
+        <Loader />
+      </div>
+    );
   }
 
   return (
@@ -55,9 +61,13 @@ const CurrencyPage = () => {
         </div>
         <CurrencyStats currency={currency} />
         <div className={s.chartBlock}>
-          <h2 className={s.chartTitle}>{currency.name} Price Chart</h2>
+          <h3 className={s.chartTitle}>{currency.name} Price Chart</h3>
           <Select options={options} className={s.select} onChange={handlePeriod} value={period} />
           <PriceChart history={history} />
+        </div>
+        <div className={s.description}>
+          <h2 className={s.descriptionTitle}>Information about {currency.name}</h2>
+          <div className={s.descriptionText}>{HtmlReactParser(currency.description)}</div>
         </div>
       </div>
     </MainLayout>
